@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  //runApp(MyApp());
+  runApp(new Center(
+          child: new Text(
+    "This is my first flutter application :)",
+    textDirection: TextDirection.ltr,
+  )) //Center
+      );
 }
 
 class MyApp extends StatelessWidget {

@@ -18,6 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 -------------------------
 
 First screen:
+
 <img src="images/1591265621.png" width="300" height="450" />
 
 Documentation used from :
