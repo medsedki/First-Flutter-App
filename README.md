@@ -62,6 +62,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/working_with_AppBar.png" width="300" height="450" />
 
+- Working with tabbar :
+
+<img src="images/working_with_tabbar.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 

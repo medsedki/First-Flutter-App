@@ -36,7 +36,13 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationGrid()));
 
   //Working with AppBar
-  runApp(new MaterialApp(home: new ApplicationAppBar()));
+  //runApp(new MaterialApp(home: new ApplicationAppBar()));
+
+  //Working with AppBar Leading & Action
+  //runApp(new MaterialApp(home: new AppBarLeadingAndAction()));
+
+  //Working with tabbar
+  runApp(new MaterialApp(home: new ApplicationTabbar()));
 }
 
 class MyApp extends StatelessWidget {
@@ -434,5 +440,117 @@ class _ApplicationStateAppBar extends State<ApplicationAppBar> {
         toolbarOpacity: 0.6,
       ),
     );
+  }
+}
+
+//Working with AppBar Leading & Action
+class AppBarLeadingAndAction extends StatefulWidget {
+  @override
+  _StateAppBarLeadingAction createState() => new _StateAppBarLeadingAction();
+}
+
+class _StateAppBarLeadingAction extends State<AppBarLeadingAndAction> {
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('AppBar Leading & Action'),
+        leading: new Icon(Icons.menu),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.arrow_forward),
+            onPressed: () {
+              print('you pressed Arrow Button');
+            },
+          ),
+          new IconButton(
+              icon: new Icon(Icons.add),
+              onPressed: () {
+                print('you pressed Addition Button');
+              }),
+          new IconButton(
+              icon: new Icon(Icons.close),
+              onPressed: () {
+                print('you pressed Close Button');
+              }),
+        ],
+      ),
+    );
+  }
+}
+
+//Working with tabbar
+class ApplicationTabbar extends StatefulWidget {
+  @override
+  _ApplicationStateTabbar createState() => new _ApplicationStateTabbar();
+}
+
+class _ApplicationStateTabbar extends State<ApplicationTabbar>
+    with SingleTickerProviderStateMixin {
+  TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = new TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        title: "Application001",
+        home: new Scaffold(
+          appBar: new AppBar(
+            title: new Text("Working with Tabbar"),
+            bottom: new TabBar(controller: controller, tabs: [
+              new Tab(
+                //text: "TAB 1",
+                icon: new Icon(Icons.home),
+              ),
+              new Tab(
+                //text: "TAB 2",
+                icon: new Icon(Icons.contact_phone),
+              ),
+              new Tab(
+                //text: "TAB 3",
+                icon: new Icon(Icons.settings),
+              ),
+            ]),
+            backgroundColor: Colors.green,
+          ),
+          bottomNavigationBar: new Material(
+            color: Colors.lightGreen,
+            child: new TabBar(controller: controller, tabs: [
+              new Tab(
+                icon: new Icon(Icons.home),
+              ),
+              new Tab(
+                icon: new Icon(Icons.contact_phone),
+              ),
+              new Tab(
+                icon: new Icon(Icons.settings),
+              ),
+            ]),
+          ),
+          body: new TabBarView(
+            controller: controller,
+            children: <Widget>[
+              new Center(
+                child: new Text("Here it's the Home page"),
+              ),
+              new Center(
+                child: new Text("Here it's the Contact page"),
+              ),
+              new Center(
+                child: new Text("Here it's the Settings page"),
+              ),
+            ],
+          ),
+        ));
   }
 }
