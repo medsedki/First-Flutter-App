@@ -24,8 +24,10 @@ void main() {
   //runApp(new Application());
 
   //Test Basic List Widget
-  runApp(new MaterialApp(home: new ApplicationListWidget()));
+  //runApp(new MaterialApp(home: new ApplicationListWidget()));
 
+  //Test List Widget-Array List
+  runApp(new MaterialApp(home: new ApplicationListWidget2()));
 }
 
 class MyApp extends StatelessWidget {
@@ -249,7 +251,6 @@ class Application extends StatelessWidget {
   }
 }
 
-
 //Test Basic List Widget
 class ApplicationListWidget extends StatefulWidget {
   @override
@@ -257,31 +258,67 @@ class ApplicationListWidget extends StatefulWidget {
 }
 
 class _ApplicationState extends State<ApplicationListWidget> {
-
   Widget build(BuildContext context) {
     return new Scaffold(
         body: new ListView(
-          children: <Widget>[
-            new ListTile(
-              title: new Text('This is Title'),
-              isThreeLine: true,
-              subtitle: new Text('This is our Subtitle'),
-              trailing: new Icon(Icons.arrow_forward),
-            ),
-            new ListTile(
-              title: new Text('This is Title'),
-              isThreeLine: true,
-              subtitle: new Text('This is our Subtitle'),
-              trailing: new Icon(Icons.close),
-            ),
-            new ListTile(
-              title: new Text('This is Title'),
-              isThreeLine: true,
-              subtitle: new Text('This is our Subtitle'),
-              trailing: new Icon(Icons.close),
-            ),
-          ],
-        )
-    );
+      children: <Widget>[
+        new ListTile(
+          title: new Text('This is Title'),
+          isThreeLine: true,
+          subtitle: new Text('This is our Subtitle'),
+          trailing: new Icon(Icons.arrow_forward),
+        ),
+        new ListTile(
+          title: new Text('This is Title'),
+          isThreeLine: true,
+          subtitle: new Text('This is our Subtitle'),
+          trailing: new Icon(Icons.close),
+        ),
+        new ListTile(
+          title: new Text('This is Title'),
+          isThreeLine: true,
+          subtitle: new Text('This is our Subtitle'),
+          trailing: new Icon(Icons.close),
+        ),
+      ],
+    ));
+  }
+}
+
+//Test List Widget-Array List
+class ApplicationListWidget2 extends StatefulWidget {
+  @override
+  _ApplicationState2 createState() => new _ApplicationState2();
+}
+
+class _ApplicationState2 extends State<ApplicationListWidget2> {
+  List<int> _listitems = new List();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    for (int i = 0; i < 50; i++) {
+      _listitems.add(i);
+      print(i);
+    }
+    print(_listitems);
+    super.initState();
+  }
+
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("List Widget with Array List"),
+        ),
+        body: new ListView.builder(
+            itemCount: _listitems.length,
+            itemBuilder: (BuildContext context, int index) {
+              return new ListTile(
+                title: new Text('This is Title n°. $index'),
+                isThreeLine: true,
+                subtitle: new Text('This is our Subtitle'),
+                trailing: new Icon(Icons.arrow_forward),
+              );
+            }));
   }
 }
