@@ -21,7 +21,11 @@ void main() {
   //runApp(new containerWidgetTest());
 
   //Test Scaffold: Row/Column
-  runApp(new Application());
+  //runApp(new Application());
+
+  //Test Basic List Widget
+  runApp(new MaterialApp(home: new ApplicationListWidget()));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -241,6 +245,43 @@ class Application extends StatelessWidget {
           new Text('Row'),
         ],
       )),
+    );
+  }
+}
+
+
+//Test Basic List Widget
+class ApplicationListWidget extends StatefulWidget {
+  @override
+  _ApplicationState createState() => new _ApplicationState();
+}
+
+class _ApplicationState extends State<ApplicationListWidget> {
+
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new ListView(
+          children: <Widget>[
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.arrow_forward),
+            ),
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.close),
+            ),
+            new ListTile(
+              title: new Text('This is Title'),
+              isThreeLine: true,
+              subtitle: new Text('This is our Subtitle'),
+              trailing: new Icon(Icons.close),
+            ),
+          ],
+        )
     );
   }
 }
