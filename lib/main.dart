@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/customWidget.dart';
 
 void main() {
   //runApp(MyApp());
@@ -45,7 +46,10 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationTabbar()));
 
   //Container Widget and outside method
-  runApp(new MaterialApp(home: new containerWidget()));
+  //runApp(new MaterialApp(home: new containerWidget()));
+
+  //Container Widget and outside method
+  runApp(new containerWidgetsFromOClass());
 }
 
 class MyApp extends StatelessWidget {
@@ -599,4 +603,17 @@ Widget _methodcustom() {
     color: Colors.yellowAccent,
     margin: const EdgeInsets.all(15.0),
   );
+}
+
+
+//Container Widget imported from other class
+class containerWidgetsFromOClass extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new Scaffold(
+        body: new customWidgets(),
+      ),
+    );
+  }
 }

@@ -70,6 +70,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/widget_method.png" width="300" height="450" />
 
+- Container Widget imported from other class :
+
+<img src="images/widget_class.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 
