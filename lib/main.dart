@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() {
   //runApp(MyApp());
-  runApp(new Center(
+
+  //Text Affichage test
+  /*runApp(new Center(
           child: new Text(
     "This is my first flutter application :)",
     textDirection: TextDirection.ltr,
   )) //Center
-      );
+      );*/
+
+  //StatelessWidget test
+  runApp(new application());
 }
 
 class MyApp extends StatelessWidget {
@@ -118,6 +123,25 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+//Test StatelessWidget
+class application extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'StatelessWidget',
+      home: new Scaffold(
+        body: new Container(
+          color: Colors.green,
+          child: new Container(
+            color: Colors.yellow,
+            margin: const EdgeInsets.all(30.0),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -21,6 +21,14 @@ First screen:
 
 <img src="images/1591265621.png" width="300" height="450" />
 
+Test Text in Screen:
+
+<img src="images/1591266151.png" width="300" height="450" />
+
+Test StatelessWidget :
+
+<img src="images/1591266594.png" width="300" height="450" />
+
 Documentation used from :
 - Flutter : https://flutter.dev/docs/get-started/install
 - Youtube : https://www.youtube.com/watch?v=YPKYT1buIVU
