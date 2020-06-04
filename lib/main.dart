@@ -49,7 +49,10 @@ void main() {
   //runApp(new MaterialApp(home: new containerWidget()));
 
   //Container Widget and outside method
-  runApp(new containerWidgetsFromOClass());
+  //runApp(new containerWidgetsFromOClass());
+
+  //Test the Text Field Widget
+  runApp(new MaterialApp(home: new ApplicationTextField()));
 }
 
 class MyApp extends StatelessWidget {
@@ -605,7 +608,6 @@ Widget _methodcustom() {
   );
 }
 
-
 //Container Widget imported from other class
 class containerWidgetsFromOClass extends StatelessWidget {
   @override
@@ -614,6 +616,51 @@ class containerWidgetsFromOClass extends StatelessWidget {
       home: new Scaffold(
         body: new customWidgets(),
       ),
+    );
+  }
+}
+
+//Test the Text Field Widget
+class ApplicationTextField extends StatefulWidget {
+  @override
+  _ApplicationStateTextField createState() => new _ApplicationStateTextField();
+}
+
+class _ApplicationStateTextField extends State<ApplicationTextField> {
+  String ptext = '';
+
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        title: "Text Field Widget",
+        home: new Scaffold(
+          appBar: new AppBar(
+            backgroundColor: Colors.blue,
+            title: new Text("Text Field Widget"),
+          ),
+            body: new Column(
+              children: <Widget>[
+                new TextField(
+                  //when you're typing
+                    /*onChanged: (String tval) {
+                      setState(() {
+                        ptext = tval;
+                      });
+                    }*/
+
+                  //when you finish and confirm your text
+                    onSubmitted: (String txt) {
+                      setState(() {
+                        ptext = txt;
+                      });
+                    },
+
+                  decoration: new InputDecoration(hintText: "Type something", labelText: "Description")
+
+                ),
+                new Text(ptext)
+              ],
+            )
+        )
     );
   }
 }
