@@ -42,7 +42,10 @@ void main() {
   //runApp(new MaterialApp(home: new AppBarLeadingAndAction()));
 
   //Working with tabbar
-  runApp(new MaterialApp(home: new ApplicationTabbar()));
+  //runApp(new MaterialApp(home: new ApplicationTabbar()));
+
+  //Container Widget and outside method
+  runApp(new MaterialApp(home: new containerWidget()));
 }
 
 class MyApp extends StatelessWidget {
@@ -553,4 +556,47 @@ class _ApplicationStateTabbar extends State<ApplicationTabbar>
           ),
         ));
   }
+}
+
+//Container Widget and outside method
+class containerWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      color: Colors.red,
+      margin: const EdgeInsets.all(15.0),
+      child: new Container(
+        color: Colors.green,
+        margin: const EdgeInsets.all(15.0),
+        child: new Container(
+          color: Colors.blue,
+          margin: const EdgeInsets.all(15.0),
+          child: new Container(
+            color: Colors.lightGreenAccent,
+            margin: const EdgeInsets.all(15.0),
+            child: new Container(
+              color: Colors.lightBlueAccent,
+              margin: const EdgeInsets.all(15.0),
+              child: new Container(
+                color: Colors.lightBlue,
+                margin: const EdgeInsets.all(15.0),
+                child: new Container(
+                  color: Colors.lightGreen,
+                  margin: const EdgeInsets.all(15.0),
+                  child: _methodcustom(),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Widget _methodcustom() {
+  return new Container(
+    color: Colors.yellowAccent,
+    margin: const EdgeInsets.all(15.0),
+  );
 }
