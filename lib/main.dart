@@ -18,7 +18,10 @@ void main() {
   //runApp(new applicationTest());
 
   //Container Widget test
-  runApp(new containerWidgetTest());
+  //runApp(new containerWidgetTest());
+
+  //Test Scaffold: Row/Column
+  runApp(new Application());
 }
 
 class MyApp extends StatelessWidget {
@@ -208,9 +211,36 @@ class containerWidgetTest extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           decoration: new BoxDecoration(color: Colors.blue),
           transform: new Matrix4.rotationZ(0.5),
-          foregroundDecoration: new BoxDecoration(color: Colors.deepPurpleAccent),
+          foregroundDecoration:
+              new BoxDecoration(color: Colors.deepPurpleAccent),
         ),
       ),
+    );
+  }
+}
+
+//Test Scaffold: Row/Column
+class Application extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'Container',
+      home: new Scaffold(
+          body: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Text('this'),
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Text('this'),
+              new Text('is'),
+              new Text('column'),
+            ],
+          ),
+          new Text('Row'),
+        ],
+      )),
     );
   }
 }
