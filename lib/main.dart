@@ -27,7 +27,10 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationListWidget()));
 
   //Test List Widget-Array List
-  runApp(new MaterialApp(home: new ApplicationListWidget2()));
+  //runApp(new MaterialApp(home: new ApplicationListWidget2()));
+
+  //Test ApplicationStack
+  runApp(new MaterialApp(home: new ApplicationStack()));
 }
 
 class MyApp extends StatelessWidget {
@@ -320,5 +323,42 @@ class _ApplicationState2 extends State<ApplicationListWidget2> {
                 trailing: new Icon(Icons.arrow_forward),
               );
             }));
+  }
+}
+
+//Test Stack
+class ApplicationStack extends StatefulWidget {
+  @override
+  _ApplicationStack createState() => new _ApplicationStack();
+}
+
+class _ApplicationStack extends State<ApplicationStack> {
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        new Card(
+            color: Colors.pink,
+            child: new Padding(
+              padding: const EdgeInsets.all(200.0),
+            )),
+        new Card(
+            color: Colors.green,
+            child: new Padding(
+              padding: const EdgeInsets.all(100.0),
+            )),
+        new Card(
+            color: Colors.blue,
+            child: new Padding(
+              padding: const EdgeInsets.all(50.0),
+            )),
+        new Card(
+            color: Colors.yellow,
+            child: new Padding(
+              padding: const EdgeInsets.all(10.0),
+            )),
+      ],
+    ));
   }
 }
