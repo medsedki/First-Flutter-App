@@ -78,6 +78,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/text_field.png" width="300" height="450" />
 
+- Test the Buttons Widget :
+
+<img src="images/buttons_widget.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 

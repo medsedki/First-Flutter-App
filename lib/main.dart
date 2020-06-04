@@ -52,7 +52,10 @@ void main() {
   //runApp(new containerWidgetsFromOClass());
 
   //Test the Text Field Widget
-  runApp(new MaterialApp(home: new ApplicationTextField()));
+  //runApp(new MaterialApp(home: new ApplicationTextField()));
+
+  //Test the Buttons Widget
+  runApp(new MaterialApp(home: new ApplicationButtons()));
 }
 
 class MyApp extends StatelessWidget {
@@ -633,34 +636,72 @@ class _ApplicationStateTextField extends State<ApplicationTextField> {
     return new MaterialApp(
         title: "Text Field Widget",
         home: new Scaffold(
-          appBar: new AppBar(
-            backgroundColor: Colors.blue,
-            title: new Text("Text Field Widget"),
-          ),
+            appBar: new AppBar(
+              backgroundColor: Colors.blue,
+              title: new Text("Text Field Widget"),
+            ),
             body: new Column(
               children: <Widget>[
                 new TextField(
-                  //when you're typing
+                    //when you're typing
                     /*onChanged: (String tval) {
                       setState(() {
                         ptext = tval;
                       });
                     }*/
 
-                  //when you finish and confirm your text
+                    //when you finish and confirm your text
                     onSubmitted: (String txt) {
                       setState(() {
                         ptext = txt;
                       });
                     },
-
-                  decoration: new InputDecoration(hintText: "Type something", labelText: "Description")
-
-                ),
+                    decoration: new InputDecoration(
+                        hintText: "Type something", labelText: "Description")),
                 new Text(ptext)
               ],
-            )
-        )
-    );
+            )));
+  }
+}
+
+//Test the Buttons Widget
+class ApplicationButtons extends StatefulWidget {
+  @override
+  _ApplicationStateButtons createState() => new _ApplicationStateButtons();
+}
+
+class _ApplicationStateButtons extends State<ApplicationButtons> {
+  String ptext = '';
+
+  void method(value) {
+    setState(() {
+      ptext = value;
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+        title: "Buttons Widget",
+        home: new Scaffold(
+            appBar: new AppBar(
+              backgroundColor: Colors.blue,
+              title: new Text("Buttons Widget"),
+            ),
+            body: new Column(
+              children: <Widget>[
+                new RaisedButton(
+                  onPressed: () {
+                    method("You Pressed on the Raised Button");
+                  },
+                  child: new Text("Raised Button"),
+                ),
+                new FlatButton(
+                    onPressed: () {
+                      method("You Pressed on the Flat Button");
+                    },
+                    child: new Text("Flat Button")),
+                new Text(ptext)
+              ],
+            )));
   }
 }
