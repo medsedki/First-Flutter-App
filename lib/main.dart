@@ -30,7 +30,10 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationListWidget2()));
 
   //Test ApplicationStack
-  runApp(new MaterialApp(home: new ApplicationStack()));
+  //runApp(new MaterialApp(home: new ApplicationStack()));
+
+  //Test GridView
+  runApp(new MaterialApp(home: new ApplicationGrid()));
 }
 
 class MyApp extends StatelessWidget {
@@ -361,4 +364,51 @@ class _ApplicationStack extends State<ApplicationStack> {
       ],
     ));
   }
+}
+
+//Test GridView
+class ApplicationGrid extends StatefulWidget {
+  @override
+  _ApplicationStateGrid createState() => new _ApplicationStateGrid();
+}
+
+class _ApplicationStateGrid extends State<ApplicationGrid> {
+  List<int> _items = new List();
+
+  @override
+  void initState() {
+    for (int i = 0; i < 50; i++) {
+      _items.add(i);
+      print(i);
+    }
+    print(_items);
+    super.initState();
+  }
+
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new GridView.builder(
+            gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+            ),
+            itemCount: _items.length,
+            itemBuilder: (BuildContext context, int index) {
+              return cards(index);
+            }));
+  }
+}
+
+Widget cards(val) {
+  return new Card(
+    color: Colors.pink,
+    child: new Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Center(
+        child: new Text(
+          '$val',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+    ),
+  );
 }
