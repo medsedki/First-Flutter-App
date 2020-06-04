@@ -14,3 +14,13 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+-------------------------
+
+First screen:
+<img src="images/1591265621.png" width="300" height="450" />
+
+Documentation used from :
+- Flutter : https://flutter.dev/docs/get-started/install
+- Youtube : https://www.youtube.com/watch?v=YPKYT1buIVU
+- Udemy Course : https://www.udemy.com/course/learn-flutter-beginners-course/
