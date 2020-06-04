@@ -12,7 +12,10 @@ void main() {
       );*/
 
   //StatelessWidget test
-  runApp(new application());
+  //runApp(new application());
+
+  //StatefulWidget test
+  runApp(new applicationTest());
 }
 
 class MyApp extends StatelessWidget {
@@ -139,6 +142,47 @@ class application extends StatelessWidget {
           child: new Container(
             color: Colors.yellow,
             margin: const EdgeInsets.all(30.0),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//StatefulWidget test
+class applicationTest extends StatefulWidget {
+  @override
+  _applicationTestState createState() => _applicationTestState();
+}
+
+class _applicationTestState extends State<applicationTest> {
+  String ttext = "";
+
+  @override
+  void initState() {
+    ttext = "Click on this button";
+
+    super.initState();
+  }
+
+  //to change the text_button on the onPressed
+  void method1() {
+    setState(() {
+      ttext = "The text is been changed";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      title: 'StatefullWidget',
+      home: new Scaffold(
+        body: new Center(
+          child: new RaisedButton(
+            onPressed: () {
+              method1();
+            },
+            child: new Text(ttext),
           ),
         ),
       ),
