@@ -17,46 +17,50 @@ samples, guidance on mobile development, and a full API reference.
 
 -------------------------
 
-First screen:
+- First screen :
 
 <img src="images/first_screen.png" width="300" height="450" />
 
-Test Text in Screen:
+- Test Text in Screen :
 
 <img src="images/text_in_screen.png" width="300" height="450" />
 
-Test StatelessWidget :
+- Test StatelessWidget :
 
 <img src="images/statelessWidget.png" width="300" height="450" />
 
-Test StatefulWidget:
+- Test StatefulWidget :
 
 <img src="images/statefulWidget.png" width="300" height="450" />
 
-Test Container Widget:
+- Test Container Widget :
 
 <img src="images/Container_Widget1.png" width="300" height="450" />
 <img src="images/Container_Widget2.png" width="300" height="450" />
 
-Test Scaffold: Row/Column :
+- Test Scaffold: Row/Column :
 
 <img src="images/Scaffold_Row_Column.png" width="300" height="450" />
 
-Test Basic List Widget :
+- Test Basic List Widget :
 
 <img src="images/basic_List_Widget.png" width="300" height="450" />
 
-Test List Widget-Array List :
+- Test List Widget-Array List :
 
 <img src="images/list_Widget_Array_List.png" width="300" height="450" />
 
-Test Stack :
+- Test Stack :
 
 <img src="images/stack.png" width="300" height="450" />
 
-Test GridView :
+- Test GridView :
 
 <img src="images/gridView.png" width="300" height="450" />
+
+- Working with AppBar :
+
+<img src="images/working_with_AppBar.png" width="300" height="450" />
 
 ---------------------------
 ---------------------------

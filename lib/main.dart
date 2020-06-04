@@ -33,7 +33,10 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationStack()));
 
   //Test GridView
-  runApp(new MaterialApp(home: new ApplicationGrid()));
+  //runApp(new MaterialApp(home: new ApplicationGrid()));
+
+  //Working with AppBar
+  runApp(new MaterialApp(home: new ApplicationAppBar()));
 }
 
 class MyApp extends StatelessWidget {
@@ -411,4 +414,25 @@ Widget cards(val) {
       ),
     ),
   );
+}
+
+//Working with AppBar
+class ApplicationAppBar extends StatefulWidget {
+  @override
+  _ApplicationStateAppBar createState() => new _ApplicationStateAppBar();
+}
+
+class _ApplicationStateAppBar extends State<ApplicationAppBar> {
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Working with AppBar'),
+        backgroundColor: Colors.green,
+        elevation: 30.0,
+        //centerTitle: true,
+        titleSpacing: 70.0,
+        toolbarOpacity: 0.6,
+      ),
+    );
+  }
 }
