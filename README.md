@@ -120,7 +120,21 @@ samples, guidance on mobile development, and a full API reference.
 <img src="images/simple_alert1.png" width="300" height="480" />
 <img src="images/simple_alert2.png" width="300" height="480" />
 
-![alt-text-1](simple_alert_page.png "title-1") ![alt-text-2](simple_alert1.png "title-2") ![alt-text-2](simple_alert2.png "title-2")
+![alt-text-1](images/simple_alert_page.png "title-1") ![alt-text-2](images/simple_alert1.png "title-2") ![alt-text-2](images/simple_alert2.png "title-2")
+
+<table>
+	    <tr>
+    	    <td style="padding:5px">
+        	    <img src="images/simple_alert_page.png">
+      	    </td>
+            <td style="padding:5px">
+            	<img src="images/simple_alert1.png">
+             </td>
+             <td style="padding:5px">
+            	<img src="images/simple_alert2.png">
+             </td>
+        </tr>
+    </table>
 
 ---------------------------
 ---------------------------
