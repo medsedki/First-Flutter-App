@@ -82,6 +82,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/buttons_widget.png" width="300" height="450" />
 
+- Test the Checkbox :
+
+<img src="images/checkbox_test.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 

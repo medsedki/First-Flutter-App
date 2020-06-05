@@ -55,6 +55,9 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationTextField()));
 
   //Test the Buttons Widget
+  /*runApp(new Center(
+    child: new MaterialApp(home: new ApplicationButtons()),
+  ));*/
   runApp(new MaterialApp(home: new ApplicationButtons()));
 }
 
@@ -665,6 +668,7 @@ class _ApplicationStateTextField extends State<ApplicationTextField> {
 }
 
 //Test the Buttons Widget
+//Test the Checkbox
 class ApplicationButtons extends StatefulWidget {
   @override
   _ApplicationStateButtons createState() => new _ApplicationStateButtons();
@@ -672,6 +676,7 @@ class ApplicationButtons extends StatefulWidget {
 
 class _ApplicationStateButtons extends State<ApplicationButtons> {
   String ptext = '';
+  bool checkvalue = false;
 
   void method(value) {
     setState(() {
@@ -679,15 +684,20 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
     });
   }
 
+  void method2(val) {
+    setState(() {
+      checkvalue = val;
+      print('$checkvalue');
+    });
+  }
+
   Widget build(BuildContext context) {
     return new MaterialApp(
         title: "Buttons Widget",
         home: new Scaffold(
-            appBar: new AppBar(
-              backgroundColor: Colors.blue,
-              title: new Text("Buttons Widget"),
-            ),
-            body: new Column(
+          body: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new RaisedButton(
                   onPressed: () {
@@ -700,8 +710,20 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
                       method("You Pressed on the Flat Button");
                     },
                     child: new Text("Flat Button")),
-                new Text(ptext)
+                new Text(ptext),
+                new Checkbox(
+                  value: checkvalue,
+                  onChanged: (bool checkbool) {
+                    method2(checkbool);
+                  },
+                ),
               ],
-            )));
+            ),
+          ),
+          appBar: new AppBar(
+            backgroundColor: Colors.blue,
+            title: new Text("Buttons Widget"),
+          ),
+        ));
   }
 }
