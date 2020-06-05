@@ -35,8 +35,19 @@ samples, guidance on mobile development, and a full API reference.
 
 - Test Container Widget :
 
-<img src="images/Container_Widget1.png" width="300" height="480" />
-<img src="images/Container_Widget2.png" width="300" height="480" />
+<!--<img src="images/Container_Widget1.png" width="300" height="480" />
+<img src="images/Container_Widget2.png" width="300" height="480" />-->
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/Container_Widget1.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/Container_Widget2.png">
+        </td>
+    </tr>
+</table>
 
 - Test Scaffold: Row/Column :
 
