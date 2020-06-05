@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
 
 import 'snackbarPage.dart';
-import 'page2.dart';
+import 'alertDialogPage.dart';
 import 'page3.dart';
 
 void main() {
@@ -927,10 +927,10 @@ class ApplicationDrawer extends StatelessWidget {
                   builder: (BuildContext context) => new snackbarPage("Snackbar Page"))),
             ),
             new ListTile(
-              title: new Text("Page 2"),
-              leading: new Icon(Icons.pages),
+              title: new Text("Alert Dialog Page"),
+              leading: new Icon(Icons.sim_card_alert),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new page2("Page 2"))),
+                  builder: (BuildContext context) => new alertDialogPage("Alert Dialog Page"))),
             ),
             new ListTile(
               title: new Text("Page 3"),

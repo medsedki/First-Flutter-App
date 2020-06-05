@@ -110,6 +110,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/snackbar_page.png" width="300" height="480" />
 
+- Add Alert Dialog :
+
+<img src="images/alert_dialog.png" width="300" height="480" />
+
 ---------------------------
 ---------------------------
 
