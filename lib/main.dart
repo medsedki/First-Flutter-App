@@ -54,10 +54,7 @@ void main() {
   //Test the Text Field Widget
   //runApp(new MaterialApp(home: new ApplicationTextField()));
 
-  //Test the Buttons Widget
-  /*runApp(new Center(
-    child: new MaterialApp(home: new ApplicationButtons()),
-  ));*/
+  //Test the Buttons Widget and the Checkbox and the RadioButton
   runApp(new MaterialApp(home: new ApplicationButtons()));
 }
 
@@ -669,6 +666,7 @@ class _ApplicationStateTextField extends State<ApplicationTextField> {
 
 //Test the Buttons Widget
 //Test the Checkbox
+//Test the RadioButton
 class ApplicationButtons extends StatefulWidget {
   @override
   _ApplicationStateButtons createState() => new _ApplicationStateButtons();
@@ -677,6 +675,9 @@ class ApplicationButtons extends StatefulWidget {
 class _ApplicationStateButtons extends State<ApplicationButtons> {
   String ptext = '';
   bool checkvalue = false;
+
+  //int radioValue = 0;
+  String radioValue = '';
 
   void method(value) {
     setState(() {
@@ -688,6 +689,13 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
     setState(() {
       checkvalue = val;
       print('$checkvalue');
+    });
+  }
+
+  void changeRadio(val) {
+    setState(() {
+      radioValue = val;
+      print('$radioValue');
     });
   }
 
@@ -716,6 +724,74 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
                   onChanged: (bool checkbool) {
                     method2(checkbool);
                   },
+                ),
+                new Padding(
+                  padding: new EdgeInsets.all(10.0),
+                ),
+                new Text(
+                  'Select correct answers from below :',
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.0,
+                  ),
+                ),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    new Radio(
+                        value: 'Raised',
+                        groupValue: radioValue,
+                        onChanged: (String val) {
+                          changeRadio(val);
+                        }),
+                    new Text(
+                      'Raised',
+                      style: new TextStyle(fontSize: 16.0),
+                    ),
+                    new Radio(
+                        value: 'Flat',
+                        groupValue: radioValue,
+                        onChanged: (String val) {
+                          changeRadio(val);
+                        }),
+                    new Text(
+                      'Flat',
+                      style: new TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    new Radio(
+                        value: 'Checkbox',
+                        groupValue: radioValue,
+                        onChanged: (String val) {
+                          changeRadio(val);
+                        }),
+                    new Text(
+                      'Checkbox',
+                      style: new TextStyle(fontSize: 16.0),
+                    ),
+                    new Radio(
+                        value: 'Radio',
+                        groupValue: radioValue,
+                        onChanged: (String val) {
+                          changeRadio(val);
+                        }),
+                    new Text(
+                      'Radio',
+                      style: new TextStyle(fontSize: 16.0),
+                    ),
+                  ],
+                ),
+                new Padding(
+                  padding: new EdgeInsets.all(5.0),
+                ),
+                new Text(
+                  'Your answer is $radioValue',
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                    fontSize: 18.0,
+                  ),
                 ),
               ],
             ),
