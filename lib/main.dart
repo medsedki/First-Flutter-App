@@ -3,7 +3,7 @@ import 'package:flutterapp/customWidget.dart';
 
 import 'snackbarPage.dart';
 import 'alertDialogPage.dart';
-import 'page3.dart';
+import 'simpleAlertDialog.dart';
 
 void main() {
   //runApp(MyApp());
@@ -933,10 +933,10 @@ class ApplicationDrawer extends StatelessWidget {
                   builder: (BuildContext context) => new alertDialogPage("Alert Dialog Page"))),
             ),
             new ListTile(
-              title: new Text("Page 3"),
-              leading: new Icon(Icons.pages),
+              title: new Text("Simple Alert Dialog Page"),
+              leading: new Icon(Icons.battery_alert),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new page3("Page 3"))),
+                  builder: (BuildContext context) => new simpleAlertDialog("Simple Alert Dialog Page"))),
             ),
             new ListTile(
               title: new Text("Settings"),
