@@ -54,7 +54,7 @@ void main() {
   //Test the Text Field Widget
   //runApp(new MaterialApp(home: new ApplicationTextField()));
 
-  //Test the Buttons Widget and the Checkbox and the RadioButton and the Slider
+  //Test the Buttons Widget and the Checkbox and the RadioButton and the Slider and the Switch
   runApp(new MaterialApp(home: new ApplicationButtons()));
 }
 
@@ -668,6 +668,7 @@ class _ApplicationStateTextField extends State<ApplicationTextField> {
 //Test the Checkbox
 //Test the RadioButton
 //Test the Slider
+//Test the Switch
 class ApplicationButtons extends StatefulWidget {
   @override
   _ApplicationStateButtons createState() => new _ApplicationStateButtons();
@@ -680,6 +681,7 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
   //int radioValue = 0;
   String radioValue = '';
   double dVal = 0.0;
+  bool switchStatus = false;
 
   void method(value) {
     setState(() {
@@ -705,6 +707,13 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
     setState(() {
       dVal = val;
       print('$dVal');
+    });
+  }
+
+  void clickSwitch(val) {
+    setState(() {
+      switchStatus = val;
+      print('$switchStatus');
     });
   }
 
@@ -832,12 +841,32 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
                     color: Colors.red,
                   ),
                 ),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    new Text(
+                      "Switch :",
+                      style: new TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15.0,
+                      ),
+                    ),
+                    new Switch(
+                        activeColor: Colors.green,
+                        inactiveThumbColor: Colors.red,
+                        value: switchStatus,
+                        onChanged: (bool sVal) {
+                          clickSwitch(sVal);
+                        }),
+                  ],
+                ),
               ],
             ),
           ),
           appBar: new AppBar(
             backgroundColor: Colors.blue,
-            title: new Text("Buttons Widget"),
+            title: new Text("Widget Material Test"),
+            centerTitle: true,
           ),
         ));
   }
