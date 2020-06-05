@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
 
-import 'page1.dart';
+import 'snackbarPage.dart';
 import 'page2.dart';
 import 'page3.dart';
 
@@ -920,11 +920,11 @@ class ApplicationDrawer extends StatelessWidget {
               },
             ),
             new ListTile(
-              title: new Text("Page 1"),
+              title: new Text("Snackbar Page"),
               //trailing: new Icon(Icons.pages),
-              leading: new Icon(Icons.pages),
+              leading: new Icon(Icons.power_input),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new page1("Page 1"))),
+                  builder: (BuildContext context) => new snackbarPage("Snackbar Page"))),
             ),
             new ListTile(
               title: new Text("Page 2"),
