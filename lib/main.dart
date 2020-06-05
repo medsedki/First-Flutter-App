@@ -55,7 +55,10 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationTextField()));
 
   //Test the Buttons Widget and the Checkbox and the RadioButton and the Slider and the Switch
-  runApp(new MaterialApp(home: new ApplicationButtons()));
+  //runApp(new MaterialApp(home: new ApplicationButtons()));
+
+  //Test the Drawer
+  runApp(new MaterialApp(home: new ApplicationDrawer()));
 }
 
 class MyApp extends StatelessWidget {
@@ -869,5 +872,69 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
             centerTitle: true,
           ),
         ));
+  }
+}
+
+//Test the Drawer
+class ApplicationDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        backgroundColor: Colors.blue,
+        title: new Text("Drawer"),
+      ),
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: new Text("Sedki"),
+              accountEmail: new Text("youzbechisedki@gmail.com"),
+              currentAccountPicture: new CircleAvatar(
+                backgroundColor: Colors.black38,
+                child: new Text("S."),
+              ),
+              decoration: new BoxDecoration(color: Colors.lightBlueAccent),
+              otherAccountsPictures: <Widget>[
+                new CircleAvatar(
+                  backgroundColor: Colors.black38,
+                  child: new Text("A."),
+                ),
+                new CircleAvatar(
+                  backgroundColor: Colors.black38,
+                  child: new Text("H."),
+                ),
+              ],
+            ),
+            new ListTile(
+              title: new Text("Home"),
+              //trailing: new Icon(Icons.home),
+              leading: new Icon(Icons.home),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            new ListTile(
+              title: new Text("Page 1"),
+              //trailing: new Icon(Icons.pages),
+              leading: new Icon(Icons.pages),
+            ),
+            new ListTile(
+              title: new Text("Page 2"),
+              leading: new Icon(Icons.pages),
+            ),
+            new ListTile(
+              title: new Text("Page 3"),
+              leading: new Icon(Icons.pages),
+            ),
+            new ListTile(
+              title: new Text("Settings"),
+              leading: new Icon(Icons.settings),
+              onTap: () => (0),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
