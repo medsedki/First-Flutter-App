@@ -102,6 +102,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/drawer_test.png" width="300" height="450" />
 
+- Add Router :
+
+<img src="images/add_router.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 

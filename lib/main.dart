@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
 
+import 'page1.dart';
+import 'page2.dart';
+import 'page3.dart';
+
 void main() {
   //runApp(MyApp());
 
@@ -57,7 +61,7 @@ void main() {
   //Test the Buttons Widget and the Checkbox and the RadioButton and the Slider and the Switch
   //runApp(new MaterialApp(home: new ApplicationButtons()));
 
-  //Test the Drawer
+  //Test the Drawer and Router
   runApp(new MaterialApp(home: new ApplicationDrawer()));
 }
 
@@ -876,6 +880,7 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
 }
 
 //Test the Drawer
+//Add Router
 class ApplicationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -918,14 +923,20 @@ class ApplicationDrawer extends StatelessWidget {
               title: new Text("Page 1"),
               //trailing: new Icon(Icons.pages),
               leading: new Icon(Icons.pages),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new page1("Page 1"))),
             ),
             new ListTile(
               title: new Text("Page 2"),
               leading: new Icon(Icons.pages),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new page2("Page 2"))),
             ),
             new ListTile(
               title: new Text("Page 3"),
               leading: new Icon(Icons.pages),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new page3("Page 3"))),
             ),
             new ListTile(
               title: new Text("Settings"),
