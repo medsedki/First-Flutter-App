@@ -54,7 +54,7 @@ void main() {
   //Test the Text Field Widget
   //runApp(new MaterialApp(home: new ApplicationTextField()));
 
-  //Test the Buttons Widget and the Checkbox and the RadioButton
+  //Test the Buttons Widget and the Checkbox and the RadioButton and the Slider
   runApp(new MaterialApp(home: new ApplicationButtons()));
 }
 
@@ -667,6 +667,7 @@ class _ApplicationStateTextField extends State<ApplicationTextField> {
 //Test the Buttons Widget
 //Test the Checkbox
 //Test the RadioButton
+//Test the Slider
 class ApplicationButtons extends StatefulWidget {
   @override
   _ApplicationStateButtons createState() => new _ApplicationStateButtons();
@@ -678,6 +679,7 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
 
   //int radioValue = 0;
   String radioValue = '';
+  double dVal = 0.0;
 
   void method(value) {
     setState(() {
@@ -696,6 +698,13 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
     setState(() {
       radioValue = val;
       print('$radioValue');
+    });
+  }
+
+  void moveSlider(val) {
+    setState(() {
+      dVal = val;
+      print('$dVal');
     });
   }
 
@@ -780,6 +789,16 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
                       'Radio',
                       style: new TextStyle(fontSize: 16.0),
                     ),
+                    new Radio(
+                        value: 'Slider',
+                        groupValue: radioValue,
+                        onChanged: (String val) {
+                          changeRadio(val);
+                        }),
+                    new Text(
+                      'Slider',
+                      style: new TextStyle(fontSize: 16.0),
+                    ),
                   ],
                 ),
                 new Padding(
@@ -791,6 +810,26 @@ class _ApplicationStateButtons extends State<ApplicationButtons> {
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
                     fontSize: 18.0,
+                  ),
+                ),
+                new Padding(
+                  padding: new EdgeInsets.all(5.0),
+                ),
+                new Slider(
+                    activeColor: Colors.red,
+                    inactiveColor: Colors.redAccent,
+                    value: dVal,
+                    min: 0.0,
+                    max: 10.0,
+                    onChanged: (double val) {
+                      moveSlider(val);
+                    }),
+                new Text(
+                  'Slider value is $dVal',
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
+                    color: Colors.red,
                   ),
                 ),
               ],

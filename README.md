@@ -90,6 +90,10 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/radiobutton.png" width="300" height="450" />
 
+- Test the Slider :
+
+<img src="images/slider_test.png" width="300" height="450" />
+
 ---------------------------
 ---------------------------
 
