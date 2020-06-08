@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,6 +23,12 @@ class snackbarPage extends StatelessWidget {
     ));
   }
 
+  int generateNumbers(){
+    var r = Random();
+    int i = r.nextInt(20);
+    return i;
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -32,13 +40,13 @@ class snackbarPage extends StatelessWidget {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            /*new Text(
-              title,
+            new Text(
+              title +", with the random number ${generateNumbers()}",
               style: new TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15.0,
               ),
-            ),*/
+            ),
             new RaisedButton(
               onPressed: () {
                 showSnackbar();
