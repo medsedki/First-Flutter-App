@@ -106,6 +106,7 @@ class ChoiceCard extends StatelessWidget {
         child: Container(
           //height: double.infinity,
           //width: double.infinity,
+          //to align the context
           alignment: Alignment(0, 0),
           decoration: BoxDecoration(
             gradient: RadialGradient(
@@ -121,20 +122,29 @@ class ChoiceCard extends StatelessWidget {
               //center: Alignment(0.1, 0.2),
             ),
           ),
-          child: Column(
-            //put in the center
-            mainAxisSize: MainAxisSize.min,
-            //Wrap_content ,Match_parent
-            //mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Icon(
-                choice.icon,
-                size: 128.0,
-                color: textStyle.color,
-              ),
-              Text(choice.title, style: textStyle),
-            ],
+          child: GestureDetector(
+            onDoubleTap: () {
+              Scaffold.of(context).showSnackBar(new SnackBar(
+                content: Text("It's clicked double.."),
+                duration: Duration(seconds: 2),
+              ));
+              print('double tap');
+            },
+            child: Column(
+              //put in the center
+              mainAxisSize: MainAxisSize.min,
+              //Wrap_content ,Match_parent
+              //mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Icon(
+                  choice.icon,
+                  size: 128.0,
+                  color: textStyle.color,
+                ),
+                Text(choice.title, style: textStyle),
+              ],
+            ),
           ),
         ),
       ),
