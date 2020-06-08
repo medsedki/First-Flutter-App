@@ -148,6 +148,25 @@ samples, guidance on mobile development, and a full API reference.
     </tr>
 </table>
 
+- Add actions and overflow dropdown menu to the Appbar :
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/choices_page1.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/choices_dot.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/choices_page2.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/choices_page3.png">
+        </td>
+    </tr>
+</table>
+
 ---------------------------
 ---------------------------
 

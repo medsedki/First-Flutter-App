@@ -23,7 +23,7 @@ class snackbarPage extends StatelessWidget {
     ));
   }
 
-  int generateNumbers(){
+  int generateNumbers() {
     var r = Random();
     int i = r.nextInt(20);
     return i;
@@ -34,6 +34,24 @@ class snackbarPage extends StatelessWidget {
     return new Scaffold(
       key: _skey,
       appBar: new AppBar(
+        //shadow -->
+        //elevation: 0.0,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: (){
+
+              },
+              child: Icon(Icons.more_vert),
+            ),
+          )
+        ],
+        actionsIconTheme: IconThemeData(
+          color: Colors.blueGrey,
+          size: 30.0,
+        ),
+        //bottom: PreferredSize(),
         title: new Text(title),
       ),
       body: new Center(
@@ -41,7 +59,7 @@ class snackbarPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              title +", with the random number ${generateNumbers()}",
+              title + ", with the random number ${generateNumbers()}",
               style: new TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15.0,

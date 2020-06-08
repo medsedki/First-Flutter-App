@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
 
-import 'snackbarPage.dart';
 import 'alertDialogPage.dart';
+import 'choicesPage.dart';
 import 'simpleAlertDialog.dart';
+import 'snackbarPage.dart';
 
 void main() {
   //runApp(MyApp());
@@ -62,7 +63,11 @@ void main() {
   //runApp(new MaterialApp(home: new ApplicationButtons()));
 
   //Test the Drawer and Router
-  runApp(new MaterialApp(home: new ApplicationDrawer()));
+  runApp(new MaterialApp(
+      //to hide the red banner of the debug
+      debugShowCheckedModeBanner: false,
+      home: new ApplicationDrawer())
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -924,19 +929,29 @@ class ApplicationDrawer extends StatelessWidget {
               //trailing: new Icon(Icons.pages),
               leading: new Icon(Icons.power_input),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new snackbarPage("Snackbar Page"))),
+                  builder: (BuildContext context) =>
+                      new snackbarPage("Snackbar Page"))),
             ),
             new ListTile(
               title: new Text("Alert Dialog Page"),
               leading: new Icon(Icons.sim_card_alert),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new alertDialogPage("Alert Dialog Page"))),
+                  builder: (BuildContext context) =>
+                      new alertDialogPage("Alert Dialog Page"))),
             ),
             new ListTile(
               title: new Text("Simple Alert Dialog Page"),
               leading: new Icon(Icons.battery_alert),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => new simpleAlertDialog("Simple Alert Dialog Page"))),
+                  builder: (BuildContext context) =>
+                      new simpleAlertDialog("Simple Alert Dialog Page"))),
+            ),
+            new ListTile(
+              title: new Text("Choices icon button"),
+              leading: new Icon(Icons.touch_app),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                  new choicesAppBar())),
             ),
             new ListTile(
               title: new Text("Settings"),
