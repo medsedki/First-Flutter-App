@@ -10,7 +10,6 @@ class simpleAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     ///
     //dialog 1
     void Dialog() {
@@ -71,33 +70,38 @@ class simpleAlertDialog extends StatelessWidget {
       ],
     );
 
-
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(title),
       ),
       body: new Center(
-        child: new Column(
+        child: new Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new RaisedButton(
-              onPressed: () {
-                print('pressed');
-                Dialog();
-              },
-              child: new Text("Show Simple Dialog 1"),
+            Expanded(
+              //flex:2 ,
+              child: new RaisedButton(
+                onPressed: () {
+                  print('pressed');
+                  Dialog();
+                },
+                child: new Text("Show Simple Dialog 1"),
+              ),
             ),
-            new RaisedButton(
-              onPressed: () {
-                print('pressed');
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return alert;
-                  },
-                );
-              },
-              child: new Text("Show Simple Dialog 2"),
+            Expanded(
+              //flex:2 ,
+              child: new RaisedButton(
+                onPressed: () {
+                  print('pressed');
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return alert;
+                    },
+                  );
+                },
+                child: new Text("Show Simple Dialog 2"),
+              ),
             ),
           ],
         ),
