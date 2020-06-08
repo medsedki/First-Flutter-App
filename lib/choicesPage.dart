@@ -23,6 +23,7 @@ class _ChoicesAppBarState extends State<choicesAppBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Choices Appbar'),
         actions: <Widget>[
@@ -101,9 +102,86 @@ class ChoiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.headline4;
     return Card(
-      color: Colors.green,
       child: Center(
-        child: Column(
+        child: Container(
+          //height: double.infinity,
+          //width: double.infinity,
+          alignment: Alignment(0, 0),
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              colors: [
+                Colors.green,
+                Colors.lightGreenAccent,
+                Colors.blueAccent,
+                Colors.orangeAccent,
+                Colors.yellow
+              ],
+              stops: [0.2, 0.5, 0.7, 0.9, 1],
+              //to put the gradiant not in the center
+              //center: Alignment(0.1, 0.2),
+            ),
+          ),
+          child: Column(
+            //put in the center
+            mainAxisSize: MainAxisSize.min,
+            //Wrap_content ,Match_parent
+            //mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Icon(
+                choice.icon,
+                size: 128.0,
+                color: textStyle.color,
+              ),
+              Text(choice.title, style: textStyle),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+
+
+return Card(
+      //color: Colors.green,
+      child: Center(
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: RadialGradient(
+                colors: [
+                  Colors.green,
+                  Colors.lightGreenAccent,
+                  Colors.blueAccent,
+                  Colors.orangeAccent,
+                  Colors.yellow
+                ],
+                //stops: [0.2, 0.5, 0.7, 1],
+                center: Alignment(0.1, 0.3),
+              ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Icon(choice.icon, size: 128.0, color: textStyle.color),
+              Text(choice.title, style: textStyle),
+            ],
+          ),
+        ),
+      ),
+    );
+
+
+
+ */
+
+///
+///
+/*
+child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -111,7 +189,20 @@ class ChoiceCard extends StatelessWidget {
             Text(choice.title, style: textStyle),
           ],
         ),
-      ),
-    );
-  }
-}
+ */
+
+/*
+Container(
+decoration: BoxDecoration(
+gradient: RadialGradient(
+colors: [
+Colors.green,
+Colors.lightGreenAccent,
+Colors.blueAccent,
+Colors.orangeAccent,
+Colors.yellow
+],
+stops: [0.2, 0.5, 0.7, 1],
+center: Alignment(0.1, 0.3),
+)),
+),*/
