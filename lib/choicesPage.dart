@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/utils.dart';
 
 void main() {
   runApp(new choicesAppBar());
@@ -52,12 +53,12 @@ class _ChoicesAppBarState extends State<choicesAppBar> {
                         IconButton(
                           icon: Icon(
                             choice.icon,
-                            color: Colors.blue.shade400,
+                            color: colorBlueShade400,
                           ),
                         ),
                         Text(choice.title,
                             style: TextStyle(
-                              color: Colors.blue.shade400,
+                              color: colorBlueShade400,
                               fontWeight: FontWeight.bold,
                             )),
                       ],
