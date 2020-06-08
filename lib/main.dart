@@ -66,8 +66,7 @@ void main() {
   runApp(new MaterialApp(
       //to hide the red banner of the debug
       debugShowCheckedModeBanner: false,
-      home: new ApplicationDrawer())
-  );
+      home: new ApplicationDrawer()));
 }
 
 class MyApp extends StatelessWidget {
@@ -950,8 +949,7 @@ class ApplicationDrawer extends StatelessWidget {
               title: new Text("Choices icon button"),
               leading: new Icon(Icons.touch_app),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                  new choicesAppBar())),
+                  builder: (BuildContext context) => new choicesAppBar())),
             ),
             new ListTile(
               title: new Text("Settings"),
