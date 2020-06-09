@@ -171,6 +171,19 @@ samples, guidance on mobile development, and a full API reference.
 
 <img src="images/decoration_gradiant.png" width="300" height="480" />
 
+- Add ListTile and Toast Types :
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/listTile.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/toastTypesTest.png">
+        </td>
+    </tr>
+</table>
+
 ---------------------------
 ---------------------------
 
@@ -178,4 +191,5 @@ Documentation used from :
 
 - Flutter : https://flutter.dev/docs/get-started/install
 - Youtube : https://www.youtube.com/watch?v=YPKYT1buIVU
-- Udemy Course : https://www.udemy.com/course/learn-flutter-beginners-course/
+- Udemy Course _1: https://www.udemy.com/course/learn-flutter-beginners-course/
+- Udemy Course _2: https://www.udemy.com/course/introduction-to-flutter/

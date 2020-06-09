@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
+import 'package:flutterapp/toastType.dart';
 
 import 'alertDialogPage.dart';
 import 'choicesPage.dart';
+import 'listTilePage.dart';
 import 'simpleAlertDialog.dart';
 import 'snackbarPage.dart';
 
@@ -950,6 +952,18 @@ class ApplicationDrawer extends StatelessWidget {
               leading: new Icon(Icons.touch_app),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) => new choicesAppBar())),
+            ),
+            new ListTile(
+              title: new Text("List Tile Page"),
+              leading: new Icon(Icons.list),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new listTilePage())),
+            ),
+            new ListTile(
+              title: new Text("Toast Types"),
+              leading: new Icon(Icons.toll),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new toastType())),
             ),
             new ListTile(
               title: new Text("Settings"),
