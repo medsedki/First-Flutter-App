@@ -197,6 +197,20 @@ samples, guidance on mobile development, and a full API reference.
     </tr>
 </table>
 
+- Add Form Element :
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/form1.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/form2.png">
+        </td>
+    </tr>
+</table>
+
+
 ---------------------------
 ---------------------------
 

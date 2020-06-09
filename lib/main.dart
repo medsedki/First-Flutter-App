@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
+import 'package:flutterapp/formPage.dart';
 import 'package:flutterapp/toastType.dart';
 
 import 'alertDialogPage.dart';
@@ -924,6 +925,13 @@ class ApplicationDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
+            ),
+            new ListTile(
+              title: new Text("Form Page"),
+              //trailing: new Icon(Icons.pages),
+              leading: new Icon(Icons.format_align_center),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new formPage())),
             ),
             new ListTile(
               title: new Text("Snackbar Page"),
