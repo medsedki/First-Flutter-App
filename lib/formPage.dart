@@ -6,11 +6,20 @@ class formPage extends StatefulWidget {
 }
 
 class _ApplicationFormPageState extends State<formPage> {
-  String ptext = '';
+  String ptext = 'A';
   String mariedStatus = "single";
   String check = "Sign up for the newspaper and related articles";
   bool termChecked = false;
   List<String> locations = ["A", "B", "C", "D"];
+
+  String f_name = '';
+  String l_name = '';
+  String email = '';
+  int phone = 0;
+  int age = 0;
+  String password = '';
+
+  final _formkey = GlobalKey<FormState>();
 
   void takecity(value) {
     setState(() {
@@ -28,8 +37,20 @@ class _ApplicationFormPageState extends State<formPage> {
   Widget build(BuildContext context) {
     var _onPressed;
 
-    if (termChecked) {
-      _onPressed = () {
+    void onPressSubmit(BuildContext context) {
+      if (_formkey.currentState.validate()) {
+        _formkey.currentState.save();
+
+        print("firstName : " + f_name);
+        print("lastName : " + l_name);
+        print("Email : " + email);
+        print("Phone Number  : " + phone.toString());
+        print("Age : " + age.toString());
+        print("Password : " + password);
+        print("City : " + ptext);
+        print("Maried Status : " + mariedStatus);
+        print("Checked : " + termChecked.toString());
+
         //don't work...
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text(
@@ -39,6 +60,13 @@ class _ApplicationFormPageState extends State<formPage> {
           duration: Duration(seconds: 2),
           backgroundColor: Colors.blueAccent,
         ));
+      }
+    }
+
+    if (termChecked) {
+      _onPressed = () {
+        //to submit the form
+        onPressSubmit(context);
       };
     }
 
@@ -55,6 +83,7 @@ class _ApplicationFormPageState extends State<formPage> {
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Form(
+                  key: _formkey,
                   child: Column(
                     children: <Widget>[
                       TextFormField(
@@ -63,6 +92,16 @@ class _ApplicationFormPageState extends State<formPage> {
                             hintText: "First Name"),
                         keyboardType: TextInputType.text,
                         maxLength: 20,
+                        //text imput validation
+                        validator: (value) {
+                          if (value.isEmpty) return 'Please enter a first name';
+                        },
+                        //form submission
+                        onSaved: (value) {
+                          setState(() {
+                            f_name = value;
+                          });
+                        },
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -70,11 +109,27 @@ class _ApplicationFormPageState extends State<formPage> {
                             hintText: "Last Name"),
                         keyboardType: TextInputType.text,
                         maxLength: 20,
+                        validator: (value) {
+                          if (value.isEmpty) return 'Please enter a last name';
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            l_name = value;
+                          });
+                        },
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             labelText: "Enter Email", hintText: "Email"),
                         keyboardType: TextInputType.emailAddress,
+                        validator: (value) {
+                          if (value.isEmpty) return 'Please enter an email';
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            email = value;
+                          });
+                        },
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -82,16 +137,43 @@ class _ApplicationFormPageState extends State<formPage> {
                             hintText: "Phone Number"),
                         keyboardType: TextInputType.phone,
                         maxLength: 12,
+                        validator: (value) {
+                          if (value.isEmpty)
+                            return 'Please enter a phone number';
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            phone = int.tryParse(value);
+                          });
+                        },
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             labelText: "Enter Age", hintText: "Age"),
                         keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value.isEmpty) return 'Please enter age';
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            age = int.tryParse(value);
+                          });
+                        },
                       ),
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
                             labelText: "Enter Password", hintText: "Password"),
+                        validator: (value) {
+                          if (value.isEmpty) return 'Please enter password';
+                          if (value.length < 8)
+                            return 'Password should be more than 8 caracteres';
+                        },
+                        onSaved: (value) {
+                          setState(() {
+                            password = value;
+                          });
+                        },
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -134,6 +216,11 @@ class _ApplicationFormPageState extends State<formPage> {
                               title: const Text('Single'),
                               value: 'single',
                               groupValue: mariedStatus,
+                              onChanged: (value) {
+                                setState(() {
+                                  mariedStatus = value;
+                                });
+                              },
                             ),
                           ),
                           Expanded(
@@ -141,6 +228,11 @@ class _ApplicationFormPageState extends State<formPage> {
                               title: const Text('Married'),
                               value: 'married',
                               groupValue: mariedStatus,
+                              onChanged: (value) {
+                                setState(() {
+                                  mariedStatus = value;
+                                });
+                              },
                             ),
                           ),
                         ],
@@ -170,17 +262,3 @@ class _ApplicationFormPageState extends State<formPage> {
     );
   }
 }
-
-/*
-
-Scaffold.of(context).showSnackBar(SnackBar(
-                              content: Text(
-                                "Nice :)",
-                                textAlign: TextAlign.center,
-                              ),
-                              duration: Duration(seconds: 2),
-                              backgroundColor: Colors.blueAccent,
-                            ));
-
- */
-

@@ -210,6 +210,18 @@ samples, guidance on mobile development, and a full API reference.
     </tr>
 </table>
 
+- Add Form Submission and Validation :
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/form_error.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/form_success.png">
+        </td>
+    </tr>
+</table>
 
 ---------------------------
 ---------------------------
