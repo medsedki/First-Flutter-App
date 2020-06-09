@@ -184,6 +184,19 @@ samples, guidance on mobile development, and a full API reference.
     </tr>
 </table>
 
+- Make a Rounded Button :
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <img src="images/click_twice.png">
+        </td>
+        <td style="padding:5px">
+            <img src="images/rounded_button.png">
+        </td>
+    </tr>
+</table>
+
 ---------------------------
 ---------------------------
 

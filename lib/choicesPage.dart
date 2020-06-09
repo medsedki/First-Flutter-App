@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/roundedButton.dart';
 import 'package:flutterapp/utils.dart';
 
 void main() {
@@ -70,9 +71,28 @@ class _ChoicesAppBarState extends State<choicesAppBar> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ChoiceCard(choice: _selectedChoice),
-      ),
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  "Twice Click in the Image to render to the choice page",
+                  textAlign: TextAlign.center,
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.blueAccent,
+                    fontSize: 25.0,
+                  ),
+                ),
+                flex: 1,
+              ),
+              Expanded(
+                child: ChoiceCard(choice: _selectedChoice),
+                flex: 9,
+              )
+            ],
+          )),
     );
   }
 }
@@ -100,7 +120,10 @@ class ChoiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle textStyle = Theme.of(context).textTheme.headline4;
+    final TextStyle textStyle = Theme
+        .of(context)
+        .textTheme
+        .headline4;
     return Card(
       child: Center(
         child: Container(
@@ -124,10 +147,12 @@ class ChoiceCard extends StatelessWidget {
           ),
           child: GestureDetector(
             onDoubleTap: () {
-              Scaffold.of(context).showSnackBar(new SnackBar(
+              Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (BuildContext context) => new roundedButton()));
+              /*Scaffold.of(context).showSnackBar(new SnackBar(
                 content: Text("It's clicked double.."),
                 duration: Duration(seconds: 2),
-              ));
+              ));*/
               print('double tap');
             },
             child: Column(
