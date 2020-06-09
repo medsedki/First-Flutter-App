@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/customWidget.dart';
 import 'package:flutterapp/formPage.dart';
 import 'package:flutterapp/toastType.dart';
+import 'package:flutterapp/utils.dart';
 
 import 'alertDialogPage.dart';
 import 'choicesPage.dart';
@@ -979,6 +980,15 @@ class ApplicationDrawer extends StatelessWidget {
               onTap: () => (0),
             ),
           ],
+        ),
+      ),
+      body: Material(
+        child: WillPopScope(
+          onWillPop: () {
+            showAlertFunc(context, 'Are you sure',
+                'It will close the application.', 'YES', 'NO');
+          },
+          child: Text("Main Screen"),
         ),
       ),
     );

@@ -223,6 +223,10 @@ samples, guidance on mobile development, and a full API reference.
     </tr>
 </table>
 
+- Add the WillPopScope :
+
+<img src="images/willpopscope.png" width="300" height="480" />
+
 ---------------------------
 ---------------------------
 
